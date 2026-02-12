@@ -44,15 +44,26 @@ const Dashboard = () => {
                             Here's what's happening with your PixelAI account.
                         </p>
                     </div>
-                    <button
-                        onClick={handleLogout}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-700 text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 hover:border-gray-600 transition-all duration-200"
-                    >
-                        <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                        </svg>
-                        Logout
-                    </button>
+                    <div className="flex items-center gap-3">
+                        <button
+                            onClick={() => navigate("/")}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-sm font-semibold text-white transition-all duration-200 shadow-lg shadow-indigo-500/20"
+                        >
+                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                            Go to Chat
+                        </button>
+                        <button
+                            onClick={handleLogout}
+                            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-700 text-sm font-medium text-gray-400 hover:text-white hover:bg-gray-800 hover:border-gray-600 transition-all duration-200"
+                        >
+                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                            </svg>
+                            Logout
+                        </button>
+                    </div>
                 </div>
 
                 {/* Stats grid */}
