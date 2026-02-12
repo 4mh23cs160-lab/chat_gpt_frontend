@@ -111,6 +111,7 @@ const Dashboard = () => {
                             ].map((action) => (
                                 <button
                                     key={action.label}
+                                    onClick={() => action.label === "New Chat" && navigate("/")}
                                     className="w-full flex items-center gap-3 p-3 rounded-xl hover:bg-gray-800/50 transition-all duration-200 text-left group"
                                 >
                                     <div className="h-9 w-9 rounded-lg bg-gray-800 flex items-center justify-center group-hover:bg-gray-700 transition-colors">
