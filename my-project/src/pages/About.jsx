@@ -23,15 +23,15 @@ const About = () => {
     <div className="min-h-screen bg-gray-950 py-20 px-4 overflow-hidden relative">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-indigo-600 rounded-full filter blur-[120px]"></div>
-        <div className="absolute bottom-40 -right-40 w-96 h-96 bg-purple-600 rounded-full filter blur-[120px]"></div>
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-blue-600 rounded-full filter blur-[120px]"></div>
+        <div className="absolute bottom-40 -right-40 w-96 h-96 bg-cyan-600 rounded-full filter blur-[120px]"></div>
       </div>
 
       <div className="max-w-4xl mx-auto relative z-10">
         <div className="text-center mb-20">
-          <h2 className="text-indigo-500 font-semibold tracking-wide uppercase mb-3">About PixelAI</h2>
+          <h2 className="text-cyan-500 font-semibold tracking-wide uppercase mb-3">About NovaCore</h2>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-            The future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">conversational intelligence</span>
+            The future of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">neural intelligence</span>
           </h1>
           <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
             We're on a mission to make advanced AI accessible, intuitive, and powerful for everyone, everywhere.
@@ -40,9 +40,9 @@ const About = () => {
 
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {features.map((feature, idx) => (
-            <div key={idx} className="bg-gray-900/50 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-indigo-500/30 transition-all duration-300 group">
-              <div className="h-12 w-12 bg-indigo-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <svg className="h-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div key={idx} className="bg-gray-900/50 backdrop-blur-xl border border-white/5 rounded-3xl p-8 hover:border-cyan-500/30 transition-all duration-300 group">
+              <div className="h-12 w-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="h-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={feature.icon} />
                 </svg>
               </div>
@@ -52,9 +52,9 @@ const About = () => {
           ))}
         </div>
 
-        <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-indigo-500/20 rounded-3xl p-10 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Start creating with PixelAI today</h2>
-          <p className="text-gray-400 mb-8 max-w-lg mx-auto">Join thousands of users who are already using PixelAI to boost their productivity and creativity.</p>
+        <div className="bg-gradient-to-br from-blue-600/20 to-cyan-600/20 border border-cyan-500/20 rounded-3xl p-10 text-center">
+          <h2 className="text-2xl font-bold text-white mb-4">Start creating with NovaCore today</h2>
+          <p className="text-gray-400 mb-8 max-w-lg mx-auto">Join thousands of users who are already using NovaCore to boost their productivity and creativity.</p>
           <a href="/signup" className="inline-flex items-center px-8 py-3 rounded-2xl bg-white text-gray-950 font-bold hover:bg-gray-100 transition-colors shadow-xl shadow-white/10">
             Get Started for Free
           </a>

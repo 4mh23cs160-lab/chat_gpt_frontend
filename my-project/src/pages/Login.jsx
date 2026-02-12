@@ -36,8 +36,8 @@ const Login = () => {
             setMessage("Login successful! ✅");
             console.log("Tokens saved:", response.data);
 
-            // Redirect to dashboard after a brief delay
-            setTimeout(() => navigate("/dashboard"), 1000);
+            // Redirect to home after a brief delay
+            setTimeout(() => navigate("/"), 1000);
         } catch (error) {
             setMessage("Login failed. Check your credentials. ❌");
             console.error("Login error:", error);
@@ -50,24 +50,25 @@ const Login = () => {
         <div className="min-h-screen bg-gray-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative overflow-hidden">
             {/* Background glows */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-                <div className="absolute -top-40 -left-40 w-80 h-80 bg-indigo-600/10 rounded-full filter blur-3xl"></div>
-                <div className="absolute top-20 -right-40 w-80 h-80 bg-purple-600/10 rounded-full filter blur-3xl"></div>
-                <div className="absolute -bottom-40 left-1/2 w-80 h-80 bg-pink-600/8 rounded-full filter blur-3xl"></div>
+                <div className="absolute -top-40 -left-40 w-80 h-80 bg-blue-600/10 rounded-full filter blur-3xl"></div>
+                <div className="absolute top-20 -right-40 w-80 h-80 bg-cyan-600/10 rounded-full filter blur-3xl"></div>
+                <div className="absolute -bottom-40 left-1/2 w-80 h-80 bg-blue-600/5 rounded-full filter blur-3xl"></div>
             </div>
 
             <div className="relative z-10 sm:mx-auto sm:w-full sm:max-w-md">
                 {/* Logo */}
-                <div className="mx-auto h-14 w-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-indigo-500/25 transform hover:scale-110 transition-transform duration-300">
-                    <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                <div className="mx-auto h-14 w-14 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg shadow-cyan-500/25 transform hover:scale-110 transition-transform duration-300">
+                    <svg className="h-8 w-8 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="2" strokeDasharray="4 2" />
+                        <circle cx="12" cy="12" r="3" fill="currentColor" />
                     </svg>
                 </div>
 
-                <h2 className="mt-6 text-center text-3xl font-extrabold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                <h2 className="mt-6 text-center text-3xl font-extrabold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
                     Welcome Back
                 </h2>
                 <p className="mt-2 text-center text-sm text-gray-500">
-                    Sign in to continue to PixelAI
+                    Sign in to continue to NovaCore
                 </p>
             </div>
 
@@ -88,7 +89,7 @@ const Login = () => {
                                     required
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="appearance-none block w-full pl-10 pr-3 py-2.5 bg-gray-800/50 border border-gray-700 rounded-xl shadow-sm placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent sm:text-sm transition-all duration-200 hover:bg-gray-800"
+                                    className="appearance-none block w-full pl-10 pr-3 py-2.5 bg-gray-800/50 border border-gray-700 rounded-xl shadow-sm placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent sm:text-sm transition-all duration-200 hover:bg-gray-800"
                                     placeholder="you@example.com"
                                 />
                             </div>
@@ -108,13 +109,13 @@ const Login = () => {
                                     required
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="appearance-none block w-full pl-10 pr-10 py-2.5 bg-gray-800/50 border border-gray-700 rounded-xl shadow-sm placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent sm:text-sm transition-all duration-200 hover:bg-gray-800"
+                                    className="appearance-none block w-full pl-10 pr-10 py-2.5 bg-gray-800/50 border border-gray-700 rounded-xl shadow-sm placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent sm:text-sm transition-all duration-200 hover:bg-gray-800"
                                     placeholder="••••••••"
                                 />
                                 <button
                                     type="button"
                                     onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-indigo-400 transition-colors"
+                                    className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-cyan-400 transition-colors"
                                 >
                                     {showPassword ? (
                                         <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,10 +134,10 @@ const Login = () => {
                         {/* Remember me & Forgot password */}
                         <div className="flex items-center justify-between">
                             <div className="flex items-center">
-                                <input type="checkbox" className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-600 rounded bg-gray-800" />
+                                <input type="checkbox" className="h-4 w-4 text-cyan-600 focus:ring-cyan-500 border-gray-600 rounded bg-gray-800" />
                                 <label className="ml-2 block text-sm text-gray-400">Remember me</label>
                             </div>
-                            <a href="#" className="text-sm font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
+                            <a href="#" className="text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors">
                                 Forgot password?
                             </a>
                         </div>
@@ -145,7 +146,7 @@ const Login = () => {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-xl shadow-lg shadow-indigo-500/25 text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-500 transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                            className="w-full flex justify-center py-2.5 px-4 border border-transparent rounded-xl shadow-lg shadow-cyan-500/25 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-cyan-500 transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                         >
                             {loading ? (
                                 <span className="flex items-center gap-2">
@@ -204,7 +205,7 @@ const Login = () => {
 
                 <p className="mt-6 text-center text-sm text-gray-500">
                     Don't have an account?{" "}
-                    <a href="/signup" className="font-semibold text-indigo-400 hover:text-indigo-300 transition-colors">
+                    <a href="/signup" className="font-semibold text-cyan-400 hover:text-cyan-300 transition-colors">
                         Create one
                     </a>
                 </p>
