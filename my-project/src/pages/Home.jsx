@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Copy, Terminal, Check, Paperclip, Mic, MicOff, X, FileText, Volume2, VolumeX } from 'lucide-react';
 
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
 const Home = () => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
@@ -25,7 +27,7 @@ const Home = () => {
       if (!token) return;
 
       try {
-        const response = await axios.get("http://127.0.0.1:8000/history/", {
+        const response = await axios.get(`${API_URL}/history/`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         const history = response.data.history.flatMap(h => [
@@ -91,7 +93,7 @@ const Home = () => {
       const formData = new FormData();
       formData.append("file", selectedFile);
       try {
-        const uploadRes = await axios.post("http://127.0.0.1:8000/attachments/upload", formData);
+        const uploadRes = await axios.post(`${API_URL}/attachments/upload`, formData);
         attachmentName = uploadRes.data.filename;
         attachmentUrl = uploadRes.data.url;
       } catch (error) {
@@ -115,9 +117,11 @@ const Home = () => {
 
     try {
       const token = localStorage.getItem("access_token");
+      console.log(`DEBUG: Using API_URL: ${API_URL}`);
+      console.log(`DEBUG: Token present: ${!!token}`);
       const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
-      const response = await axios.post("http://127.0.0.1:8000/ask", {
+      const response = await axios.post(`${API_URL}/ask`, {
         message: input || (attachmentName ? `Attached file: ${attachmentName}` : ""),
         attachment_name: attachmentName,
         attachment_url: attachmentUrl

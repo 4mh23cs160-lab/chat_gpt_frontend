@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
 const Dashboard = () => {
     const navigate = useNavigate();
     const [recentChats, setRecentChats] = React.useState([]);
@@ -11,7 +13,7 @@ const Dashboard = () => {
             if (!token) return;
 
             try {
-                const response = await fetch("http://127.0.0.1:8000/history/", {
+                const response = await fetch(`${API_URL}/history/`, {
                     headers: { "Authorization": `Bearer ${token}` }
                 });
                 const data = await response.json();

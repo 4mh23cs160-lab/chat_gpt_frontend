@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -17,7 +19,7 @@ const Login = () => {
 
         try {
             const response = await axios.post(
-                "http://127.0.0.1:8000/login",
+                `${API_URL}/login`,
                 {
                     email: email,
                     password: password,
